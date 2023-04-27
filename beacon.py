@@ -754,7 +754,8 @@ class BeaconProbe:
         self.model.save(self, False)
         gcmd.respond_info("Beacon model offset has been updated\n"
                 "You must run the SAVE_CONFIG command now to update the\n"
-                "printer config file and restart the printer.")
+                "printer config file and restart the printer.\n"
+                "New offset: %s" % (self.model.offset))
         self.model.offset = old_offset
 
 class BeaconModel:
